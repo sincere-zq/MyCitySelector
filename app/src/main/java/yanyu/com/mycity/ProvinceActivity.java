@@ -13,6 +13,7 @@ public class ProvinceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_province);
         final TextView tv_pro = (TextView) findViewById(R.id.tv_pro);
         final TextView tv_area = (TextView) findViewById(R.id.tv_area);
+        final TextView tv_time = (TextView) findViewById(R.id.tv_time);
         tv_area.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,6 +37,13 @@ public class ProvinceActivity extends AppCompatActivity {
                         tv_pro.setText(currentProvince + "  " + currentCity);
                     }
                 });
+            }
+        });
+        tv_time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DataPickDialog dataPickDialog = new DataPickDialog(ProvinceActivity.this);
+                dataPickDialog.dialog(tv_time);
             }
         });
     }
